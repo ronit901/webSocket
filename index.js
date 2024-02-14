@@ -16,17 +16,15 @@ io.on('connection', (socket) => {
 
     socket.on('connect', (data)=>{
         console.log(socket.id, ": ", data);
-        socket.emit('connect', 'tnx💥')
     });
 
     socket.on('1', (data)=>{
         console.log(socket.id, ": ", data);
-        socket.emit('1', 'tnx💥')
+        socket.emit('1', data)
     });
 
     socket.on('disconnect', ()=>{
-        // console.log("disconnect");
-        socket.disconnect()
+        console.log("disconnect : ", socket.id);
     })
 });
 
